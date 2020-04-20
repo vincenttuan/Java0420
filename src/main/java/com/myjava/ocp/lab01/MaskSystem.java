@@ -14,5 +14,6 @@ public class MaskSystem {
         
         System.out.printf("color: %s price: %d %s\n", m1.getColor(), Mask.price, m1.isChild()?"兒童":"成人");
         System.out.printf("color: %s price: %d %s\n", m2.getColor(), Mask.price, m2.isChild()?"兒童":"成人");
+        System.out.printf("color: %s price: %d %s\n", m3.getColor(), Mask.price, m3.isChild()?"兒童":"成人");
     }
 }
