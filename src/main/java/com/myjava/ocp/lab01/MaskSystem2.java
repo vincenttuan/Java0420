@@ -1,5 +1,6 @@
 package com.myjava.ocp.lab01;
 
+import java.util.IntSummaryStatistics;
 import java.util.stream.Stream;
 
 public class MaskSystem2 {
@@ -23,6 +24,11 @@ public class MaskSystem2 {
         System.out.println("-------------------------------------------");
         int sum = Stream.of(m1, m2, m3).mapToInt(m -> m.getPrice()).sum();
         System.out.println("sum = " + sum);
-        
+        System.out.println("-------------------------------------------");
+        double avg = Stream.of(m1, m2, m3).mapToInt(m -> m.getPrice()).average().getAsDouble();
+        System.out.println("avg = " + avg);
+        System.out.println("-------------------------------------------");
+        IntSummaryStatistics stat = Stream.of(m1, m2, m3).mapToInt(m -> m.getPrice()).summaryStatistics();
+        System.out.println(stat);
     }
 }
