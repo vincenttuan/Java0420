@@ -1,10 +1,21 @@
 package com.myjava.ocp.lab01;
 
 public class Mask {
+    // 物件屬性
     private String color;
     private boolean child;
     public final static int price = 5;
     
+    // 建構子
+    public Mask(String color, boolean child) {
+        
+    }
+    
+    public Mask() {
+        
+    }
+    
+    // 封裝方法
     public void setColor(String c) {
         color = c;
     }
