@@ -31,5 +31,9 @@ public class Mask {
     public void setChild(boolean child) {
         this.child = child;
     }
+
+    public int getPrice() {
+        return price;
+    }
     
 }

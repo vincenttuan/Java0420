@@ -20,7 +20,9 @@ public class MaskSystem2 {
         Stream.of(m1, m2, m3).filter(m -> !m.isChild()).forEach(m -> {
             System.out.printf("color: %s price: %d %s\n", m.getColor(), Mask.price, m.isChild()?"兒童":"成人");
         });
-        
+        System.out.println("-------------------------------------------");
+        int sum = Stream.of(m1, m2, m3).mapToInt(m -> m.getPrice()).sum();
+        System.out.println("sum = " + sum);
         
     }
 }
