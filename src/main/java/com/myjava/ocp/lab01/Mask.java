@@ -8,7 +8,8 @@ public class Mask {
     
     // 建構子
     public Mask(String color, boolean child) {
-        
+        this.color = color;
+        this.child = child;
     }
     
     public Mask() {
