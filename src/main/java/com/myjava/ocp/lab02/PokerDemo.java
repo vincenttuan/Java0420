@@ -16,6 +16,19 @@ public class PokerDemo {
         print(poker);
     }
     
+    public static double getScore(int pos, String[] poker) {
+        String posValue = poker[pos];
+        switch(posValue){
+            case "A":
+                return 1;
+            case "J":
+            case "Q":
+            case "K":    
+                return 0.5;
+            default: // 2 ~ 10
+                return Integer.parseInt(posValue); // 字串轉數字
+        }
+    }
     public static void shuffle(String[] poker, int count) {
         Random r = new Random();
         for(int i=1;i<=count;i++) {
