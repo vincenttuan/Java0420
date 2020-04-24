@@ -4,6 +4,9 @@ package com.myjava.ocp.lab02;
 import java.util.Random;
 
 public class PokerDemo {
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    
     public static void main(String[] args) {
         String[] poker = {
             "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", 
