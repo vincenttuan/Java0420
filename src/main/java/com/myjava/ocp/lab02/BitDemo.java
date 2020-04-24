@@ -6,5 +6,7 @@ public class BitDemo {
         System.out.println(Integer.toBinaryString(x));
         int y = 0b1101;
         System.out.println(y);
+        int z = -14;
+        System.out.println(Integer.toBinaryString(z));
     }
 }
