@@ -14,6 +14,9 @@ public class PokerDemo {
         print(poker);
         shuffle(poker, 10000);
         print(poker);
+        
+        double sum = getScore(0, poker) + getScore(1, poker) + getScore(2, poker);
+        System.out.println(sum);
     }
     
     public static double getScore(int pos, String[] poker) {
