@@ -49,7 +49,8 @@ public class PokerDemo {
     
     public static void print(String[] poker) {
         for(String p : poker) {
-            System.out.print(p + " ");
+            String color = p.equals("J") || p.equals("Q") || p.equals("K") ? RED : BLACK;
+            System.out.print(color + p + " ");
         }
         System.out.println();
     }
