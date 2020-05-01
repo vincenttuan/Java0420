@@ -4,13 +4,16 @@ import java.util.Arrays;
 
 public class IDCheck {
     public static void main(String[] args) {
-        String id = "M140051653";
+        String id = "A123456789"; //"M140051653";
         // 2 1 1 4 0 0 5 1 6 5 3
         int[] idNums = new int[11];
         int[] delta = {1, 9, 8, 7, 6, 5, 4, 3, 2, 1, 1};
         
         for(int i=0;i<id.length();i++) {
             switch (id.charAt(i)) {
+                case 'A':
+                    idNums[0] = 1;idNums[1] = 0;
+                    break;
                 case 'M':
                     idNums[0] = 2;idNums[1] = 1;
                     break;
