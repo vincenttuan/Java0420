@@ -5,8 +5,13 @@ import java.util.Random;
 
 public class IDCheck_AutoGen {
     public static void main(String[] args) {
-        String id = getId();
-        System.out.println(id);
+        while (true) {            
+            String id = getId();
+            System.out.print(id + " ");
+            boolean idCheck = check(id);
+            System.out.println(idCheck);
+            if(idCheck) break;
+        }
         
     }
     
