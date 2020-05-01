@@ -12,6 +12,11 @@ public class GuessNumber {
             System.out.printf("%d ~ %d 之間猜一數字?\n", min, max);
             Scanner sc = new Scanner(System.in);
             int guess = sc.nextInt();
+            
+            if(guess <= min || guess >= max) {
+                continue;
+            }
+            
             if(guess > ans) {
                 max = guess;
             } else if (guess < ans) {
