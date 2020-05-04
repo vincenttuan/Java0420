@@ -23,6 +23,7 @@ public class CarSystem {
         car.tires = new Tire[]{t1, t2, t3, t4};
         car.engine = engine;
         //System.out.println(car);
+        car.setPrice();
         car.print();
     }
 }
