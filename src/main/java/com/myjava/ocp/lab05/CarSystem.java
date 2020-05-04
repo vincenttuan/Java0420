@@ -14,6 +14,7 @@ public class CarSystem {
         t3.name = "米其林";t3.price=5000;
         Tire t4 = new Tire();
         t4.name = "米其林";t4.price=5000;
+        
         Engine engine = new Engine();
         engine.power=6000;engine.price=500000;
         
