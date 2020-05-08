@@ -1,7 +1,7 @@
 package com.myjava.ocp.lab06;
 
 public class Product {
-    int stock; // 庫存
+    static int stock; // 庫存
     void sell(int amount) {
         stock -= amount;
     }
