@@ -10,6 +10,10 @@ public class Drink {
         this.price = price;
         this.stock = stock;
     }
+
+    public Drink(String name) {
+        this.name = name;
+    }
     
     public void sell(int amount) {
         stock -= amount;
