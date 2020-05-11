@@ -8,7 +8,8 @@ public class Zoo2 {
         Cat cat = new Cat("波斯貓");
         Tiger tiger = new Tiger("老虎");
         print(cat);
-        
+        Animal animal = getAnimal();
+        print(animal);
     }
     
     public static void print(Animal animal) {
