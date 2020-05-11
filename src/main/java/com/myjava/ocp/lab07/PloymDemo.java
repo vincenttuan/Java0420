@@ -23,8 +23,10 @@ public class PloymDemo {
         Base b3 = new DerivedB();
         b1 = (Base) b3;
         Base b4 = (DerivedA)b3;
-        b1.test();
-        b4.test();
-        
+        b1.test(); // DerivedB
+        b4.test(); // DerivedB
+        b4 = b2; // 轉換實體
+        b4.test(); // DerivedA
+        ((DerivedB)b4).test(); // 向下轉型, 所以會失敗
     }
 }
