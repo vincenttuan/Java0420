@@ -8,6 +8,9 @@ public class Zoo {
         Cat cat = new Cat("波斯貓");
         System.out.println(cat.getName());
         cat.shout();
-        
+        Tiger tiger = new Tiger("老虎");
+        System.out.println(tiger.getName());
+        tiger.shout();
+        tiger.hunt();
     }
 }
