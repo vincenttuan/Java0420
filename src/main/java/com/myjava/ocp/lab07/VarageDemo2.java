@@ -15,5 +15,4 @@ public class VarageDemo2 {
         return x * y;
     }
     
-    
 }
