@@ -16,5 +16,13 @@ public class PowerMain {
         // Java 8
         int sum2 = Arrays.asList(prices).stream().mapToInt(Price::getCost).sum();
         System.out.println(sum2);
+        // 試問哪一個商品最貴
+        int maxCost = Arrays.asList(prices).stream().mapToInt(Price::getCost).max().getAsInt();
+        
+        Arrays.asList(prices)
+                .stream()
+                .filter(p -> p.getCost() == maxCost)
+                .forEach(System.out::println); // p -> System.out.println(p)
+        
     }
 }
