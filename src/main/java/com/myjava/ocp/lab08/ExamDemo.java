@@ -6,8 +6,7 @@ public class ExamDemo {
     public static void main(String[] args) {
         int[][] exams = {{100, 90}, {50, 80}, {70, 100}};
         
-        double chineseAvg = Arrays.asList(exams)
-                            .stream()
+        double chineseAvg = Arrays.stream(exams)
                             .mapToInt(e -> e[0])
                             .average()
                             .getAsDouble();
@@ -16,8 +15,7 @@ public class ExamDemo {
         int[] exam = {100, 90};
         System.out.println(Arrays.stream(exam).average().getAsDouble());
         
-        double classAvg = Arrays.asList(exams)
-               .stream()
+        double classAvg = Arrays.stream(exams)
                .mapToDouble(e -> Arrays.stream(e).average().getAsDouble())
                .average()
                .getAsDouble();
