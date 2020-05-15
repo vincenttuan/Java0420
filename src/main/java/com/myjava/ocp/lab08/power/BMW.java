@@ -19,7 +19,13 @@ public class BMW implements Car, Price {
     public int getCost() {
         return 200_0000;
     }
- 
+
+    @Override
+    public String toString() {
+        return "BMW{" + '}';
+    }
+    
+    
 	 
 }
  

@@ -19,6 +19,11 @@ public class ToyCar implements Car, Price {
     public int getCost() {
         return 500;
     }
+
+    @Override
+    public String toString() {
+        return "ToyCar{" + '}';
+    }
  
 	
 	 

@@ -19,6 +19,11 @@ public class Computer implements Device, Price {
     public int getCost() {
         return 30000;
     }
+
+    @Override
+    public String toString() {
+        return "Computer{" + '}';
+    }
  
 	
 	 

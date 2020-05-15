@@ -19,6 +19,11 @@ public class Phone implements Device, Price {
     public int getCost() {
         return 5000;
     }
+
+    @Override
+    public String toString() {
+        return "Phone{" + '}';
+    }
  
 	
 	 
