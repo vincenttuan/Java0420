@@ -7,6 +7,7 @@ public class Truck extends Car {
     }
 
     public void move() {
+        System.out.println(getName() + "用履帶走");
     }
 
 }
