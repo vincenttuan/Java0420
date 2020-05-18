@@ -2,7 +2,7 @@ package com.myjava.ocp.lab09;
 
 import java.util.Random;
 
-public class BigLotto implements Lotto {
+public class BigLotto extends ALotto {
     
     private boolean isExist(int[] nums, int n) {
         for(int i=0;i<nums.length;i++) {
@@ -29,12 +29,4 @@ public class BigLotto implements Lotto {
         return lotto;
     }
 
-    @Override
-    public void printLotto(int [] lotto) {
-        for(int i=0;i<lotto.length;i++) {
-            System.out.printf("%d ", lotto[i]);
-        }
-        System.out.println();
-    }
-    
 }
