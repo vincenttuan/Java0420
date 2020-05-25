@@ -15,5 +15,6 @@ public class PetStore {
             }
         };
         d.play();
+        //((PetStore$1)d).eat(); //目前已不適用
     }
 }
