@@ -7,6 +7,17 @@ interface Calc {
 public class Lambdademo {
     public static void main(String[] args) {
         int[] scores = {100, 50, 70, 40};
+        // Java 7
+        checkScore(scores, new Calc() {
+            public boolean check(int n) {
+                if (n >= 60) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+        
     }
     
     public static void checkScore(int[] scores, Calc calc) {
