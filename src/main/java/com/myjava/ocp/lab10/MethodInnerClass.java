@@ -12,7 +12,11 @@ public class MethodInnerClass {
                 System.out.println(x);
             }
         }
-        
+        new Bar().foo();
+    }
+    
+    public static void main(String[] args) {
+        new MethodInnerClass().foo();
     }
     
 }
