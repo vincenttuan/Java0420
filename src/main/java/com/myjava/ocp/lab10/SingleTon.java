@@ -11,6 +11,9 @@ class Teacher {
     public String getName() {
         return name;
     }
+    public static Teacher getInstance() {
+        return _instance;
+    }
 }
 
 public class SingleTon {
