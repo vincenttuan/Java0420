@@ -19,6 +19,9 @@ public class Lambdademo {
         checkScore(scores, (n) -> {
                                     return (n >= 80)?true:false;
                                   });
+        Calc case1 = (n) -> (n >= 60)?true:false;
+        Calc case2 = (n) -> (n >= 80)?true:false;
+        checkScore(scores, case1);
     }
     
     public static void checkScore(int[] scores, Calc calc) {
