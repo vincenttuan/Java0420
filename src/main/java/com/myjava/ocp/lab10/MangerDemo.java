@@ -7,5 +7,7 @@ public class MangerDemo {
         
         Manager.Sales sales = m.new Sales();
         sales.job();
+        
+        
     }
 }
