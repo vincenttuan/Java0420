@@ -10,14 +10,15 @@ public class Lambdademo {
         // Java 7
         checkScore(scores, new Calc() {
             public boolean check(int n) {
-                if (n >= 60) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return (n >= 60)?true:false;
             }
         });
-        
+        // Java 8
+        checkScore(scores, (int n) -> (n >= 60)?true:false);
+        checkScore(scores, (n) -> (n >= 80)?true:false);
+        checkScore(scores, (n) -> {
+                                    return (n >= 80)?true:false;
+                                  });
     }
     
     public static void checkScore(int[] scores, Calc calc) {
