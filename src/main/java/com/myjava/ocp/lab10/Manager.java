@@ -13,5 +13,11 @@ public class Manager {
             System.out.println("系統開發");
         }
     }
+    
+    public class Sales {
+        public void job() {
+            System.out.println("對外行銷系統產品");
+        }
+    }
 
 }
