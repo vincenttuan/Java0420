@@ -10,6 +10,9 @@ public class PetStore {
             public void play() {
                 System.out.println("握手");
             }
+            public void eat() {
+                System.out.println("骨頭");
+            }
         };
         d.play();
     }
