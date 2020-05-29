@@ -1,38 +1,18 @@
 package com.myjava.ocp.lab11;
 
+import java.util.Objects;
+
 public class Pen {
     private String color;
     private int price;
+
+    public Pen() {
+    }
 
     public Pen(String color, int price) {
         this.color = color;
         this.price = price;
     }
-
-    @Override
-    public int hashCode() {
-        return 7 * 13 + color.hashCode() + price;
-    }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if(obj == this) {
-            return true;
-        }
-        
-        if(!(obj instanceof Pen)) {
-            return false;
-        }
-        
-        Pen pen = (Pen)obj;
-        if(pen.color.equals(color) && pen.price == price) {
-            return true;
-        } else {
-            return false;
-        }
-        
-    }
-    
 
     public String getColor() {
         return color;
@@ -51,9 +31,37 @@ public class Pen {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.color);
+        hash = 47 * hash + this.price;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pen other = (Pen) obj;
+        if (this.price != other.price) {
+            return false;
+        }
+        if (!Objects.equals(this.color, other.color)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
     public String toString() {
         return "Pen{" + "color=" + color + ", price=" + price + '}';
     }
-
     
 }
