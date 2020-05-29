@@ -11,6 +11,13 @@ public class Pen {
 
     @Override
     public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+        
+        if(!(obj instanceof Pen)) {
+            return false;
+        }
         
         Pen pen = (Pen)obj;
         if(pen.color.equals(color) && pen.price == price) {
