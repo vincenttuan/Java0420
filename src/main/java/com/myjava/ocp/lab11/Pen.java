@@ -11,7 +11,7 @@ public class Pen {
 
     @Override
     public int hashCode() {
-        return 7;
+        return 7 * 13 + color.hashCode() + price;
     }
     
     @Override
