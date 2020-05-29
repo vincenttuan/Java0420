@@ -10,6 +10,13 @@ public class Pen {
     }
 
     @Override
+    public int hashCode() {
+        return 7;
+    }
+    
+    
+    
+    @Override
     public boolean equals(Object obj) {
         if(obj == this) {
             return true;
