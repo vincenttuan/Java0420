@@ -37,6 +37,13 @@ public class TreeSetDemo2 {
         System.out.printf("sum: %d, avg=%.2f\n", stat.getSum(), stat.getAverage());
         System.out.printf("max: %d, min=%d\n", stat.getMax(), stat.getMin());
         
+        // 最高分是哪一科?
+        String subject = scores.stream().filter(e -> e.getScore() == stat.getMax())
+                .findFirst()
+                .get()
+                .getSubject();
+        System.out.println(subject);
+        
         
     }
 }
