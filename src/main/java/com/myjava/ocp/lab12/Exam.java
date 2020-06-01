@@ -7,9 +7,11 @@ public class Exam {
     public Exam() {
     }
 
-    public Exam(String subject) {
+    public Exam(String subject, Integer score) {
         this.subject = subject;
+        this.score = score;
     }
+
 
     public String getSubject() {
         return subject;
