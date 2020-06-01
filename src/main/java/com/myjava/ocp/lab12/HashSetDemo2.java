@@ -1,6 +1,7 @@
 package com.myjava.ocp.lab12;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class HashSetDemo2 {
     public static void main(String[] args) {
@@ -16,6 +17,17 @@ public class HashSetDemo2 {
         hs.add(pen1);hs.add(pen2);hs.add(paper1);hs.add(paper2);
         hs.add(coin1);hs.add(coin5);hs.add(coin10);
         System.out.println(hs);
+        
+        // Java 7
+        int sum = 0;
+        Iterator it = hs.iterator();
+        while (it.hasNext()) {
+            Object next = it.next();
+            if(next instanceof Coin) {
+                sum += ((Coin) next).getMoney();
+            }
+        }
+        System.out.printf("sum = %d\n", sum);
         
     }
 }
