@@ -17,5 +17,10 @@ public class Paper {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Paper{" + "size=" + size + '}';
+    }
     
 }
