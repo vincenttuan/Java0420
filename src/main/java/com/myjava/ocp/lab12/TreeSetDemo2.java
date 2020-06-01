@@ -35,5 +35,8 @@ public class TreeSetDemo2 {
                 .mapToInt(e -> e.getScore())
                 .summaryStatistics();
         System.out.printf("sum: %d, avg=%.2f\n", stat.getSum(), stat.getAverage());
+        System.out.printf("max: %d, min=%d\n", stat.getMax(), stat.getMin());
+        
+        
     }
 }
