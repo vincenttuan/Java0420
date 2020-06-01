@@ -1,5 +1,6 @@
 package com.myjava.ocp.lab12;
 
+import java.util.IntSummaryStatistics;
 import java.util.TreeSet;
 
 public class TreeSetDemo2 {
@@ -11,5 +12,28 @@ public class TreeSetDemo2 {
         TreeSet<Exam> scores = new TreeSet<>();
         scores.add(e1);scores.add(e2);scores.add(e3);
         System.out.println(scores);
+        // Java 8 總分與平均
+        scores.stream()
+                .forEach(System.out::println); // e -> System.out.println(e)
+        
+        scores.stream()
+                .mapToInt(e -> e.getScore())
+                .forEach(System.out::println);
+        
+        int sum = scores.stream()
+                    .mapToInt(e -> e.getScore())
+                    .sum();
+        
+        double avg = scores.stream()
+                    .mapToInt(e -> e.getScore())
+                    .average()
+                    .getAsDouble();
+        
+        System.out.printf("sum: %d, avg=%.2f\n", sum, avg);
+        
+        IntSummaryStatistics stat = scores.stream()
+                .mapToInt(e -> e.getScore())
+                .summaryStatistics();
+        System.out.printf("sum: %d, avg=%.2f\n", stat.getSum(), stat.getAverage());
     }
 }
