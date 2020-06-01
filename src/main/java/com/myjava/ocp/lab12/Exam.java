@@ -1,6 +1,6 @@
 package com.myjava.ocp.lab12;
 
-public class Exam {
+public class Exam implements Comparable<Exam>{
     private String subject;
     private Integer score;
 
@@ -27,6 +27,16 @@ public class Exam {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "Exam{" + "subject=" + subject + ", score=" + score + '}';
+    }
+
+    @Override
+    public int compareTo(Exam o) {
+        return score - o.score;
     }
     
 }
