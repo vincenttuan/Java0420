@@ -4,6 +4,7 @@ import java.util.TreeSet;
 
 public class TreeSetDemo2 {
     public static void main(String[] args) {
+        Exam.sort = 1;
         Exam e1 = new Exam("國文", 80);
         Exam e2 = new Exam("數學", 100);
         Exam e3 = new Exam("英文", 90);
