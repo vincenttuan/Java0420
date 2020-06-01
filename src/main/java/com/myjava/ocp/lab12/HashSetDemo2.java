@@ -28,6 +28,14 @@ public class HashSetDemo2 {
             }
         }
         System.out.printf("sum = %d\n", sum);
-        
+        // Java 8
+        sum = hs.stream()
+                .filter(e -> (e instanceof Coin))
+                .map(e -> (Coin)e)
+                .mapToInt(e -> e.getMoney())
+                .peek(e -> System.out.println(e))
+                .sum();
+                //.forEach(e -> System.out.println(e));
+        System.out.printf("sum = %d\n", sum);
     }
 }
