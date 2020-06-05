@@ -30,7 +30,13 @@ public class TWSE {
                 list.add(stock);
             }
         }
-        System.out.println(list);
+        //System.out.println(list);
+        list.stream()
+                .filter(stock -> !stock.本益比.equals("-") && Double.parseDouble(stock.本益比) < 10)
+                .filter(stock -> !stock.殖利率.equals("-") && Double.parseDouble(stock.殖利率) > 7)
+                .filter(stock -> !stock.股價淨值比.equals("-") && Double.parseDouble(stock.股價淨值比) < 1)
+                .forEach(System.out::println);
+                
         
     }
 }
