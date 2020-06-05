@@ -13,7 +13,7 @@ public class TWSE {
         String[] rows = csvstring.split("\n");
         for(String row : rows) {
             if(row.trim().split(",").length == 7) {
-                System.out.println(row.trim());
+                System.out.println(row.trim().replace("\"", ""));
             }
         }
         
