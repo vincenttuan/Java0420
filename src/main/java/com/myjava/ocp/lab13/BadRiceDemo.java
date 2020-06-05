@@ -10,5 +10,7 @@ public class BadRiceDemo {
         URL url = new URL(urlpath);
         String jsonstring = new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
         System.out.println(jsonstring);
+        // 2. 將 json 透過 Gson 轉成 BadRice[]
+        
     }
 }
