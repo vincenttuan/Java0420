@@ -12,7 +12,7 @@ public class BadRiceDemo {
         String urlpath = "https://data.coa.gov.tw/Service/OpenData/FromM/AgricultureiRiceFailure.aspx";
         URL url = new URL(urlpath);
         String jsonstring = new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
-        System.out.println(jsonstring);
+        //System.out.println(jsonstring);
         // 2. 將 json 透過 Gson 轉成 BadRice[]
         BadRice[] badRices = new Gson().fromJson(jsonstring, BadRice[].class);
         // 建立 list 容器, 並將 badRices 注入
@@ -20,7 +20,10 @@ public class BadRiceDemo {
         for(BadRice badRice : badRices) {
             list.add(badRice);
         }
-        System.out.println(list);
+        //System.out.println(list);
         // 3. 分析
+        list.stream()
+                .filter(badrice -> badrice.品名.contains("日本"))
+                .forEach(badrice -> System.out.printf("%s %s\n", badrice.品名, badrice.不合格原因));
     }
 }
