@@ -1,6 +1,7 @@
 package com.myjava.ocp.lab13;
 
 import com.google.gson.Gson;
+import java.io.File;
 import java.net.URL;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -9,11 +10,12 @@ import java.util.Scanner;
 
 public class RiceDemo {
     public static void main(String[] args) throws Exception {
-        String urlpath1 = "https://data.coa.gov.tw/Service/OpenData/FromM/AgricultureiRiceFailure.aspx";
-        String urlpath2 = "https://data.coa.gov.tw/Service/OpenData/FromM/AgricultureiRiceQualified.aspx";
         List<Rice> list = new LinkedList<>();
-        addData(urlpath1, list);
-        addData(urlpath2, list);
+        File file = new File("src\\main\\java\\com\\myjava\\ocp\\lab13\\urls.txt");
+        String urls = new Scanner(file).useDelimiter("\\A").next();
+        for(String urlstring : urls.split("\n")) {
+            addData(urlstring.trim(), list);
+        }
         // 3. 分析
         list.stream()
                 .filter(rice -> rice.品名.contains("日本"))
