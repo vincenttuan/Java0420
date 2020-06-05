@@ -18,8 +18,8 @@ public class RiceDemo {
         }
         // 3. 分析
         list.stream()
-                .filter(rice -> rice.品名.contains("日本"))
-                .forEach(rice -> System.out.printf("%s %s %s\n", rice.品名, rice.檢驗結果, rice.不合格原因));
+                .filter(rice -> rice.品名.contains("外銷日本的米"))
+                .forEach(rice -> System.out.printf("%s %s %s %s %s\n", rice.品名, rice.國際條碼, rice.檢驗結果, rice.Title, rice.不合格原因));
     }
     
     private static void addData(String urlpath, List list) throws Exception {
