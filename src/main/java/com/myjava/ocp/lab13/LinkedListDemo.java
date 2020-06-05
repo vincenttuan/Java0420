@@ -27,6 +27,11 @@ public class LinkedListDemo {
             Integer value = iter.previous();
             System.out.printf("%d : %d\n", index, value);
         }
+        
+        for(int i=0;i<list.size();i++) {
+            System.out.println(list.get(i));
+        }
+        
         // Java 8 輪詢顯示集合內容
         list.forEach(System.out::println);
         list.forEach(e -> System.out.println(e));
