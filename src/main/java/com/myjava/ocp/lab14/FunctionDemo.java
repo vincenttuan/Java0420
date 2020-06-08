@@ -21,7 +21,9 @@ public class FunctionDemo {
         // 4. Supplier
         Supplier<String> sup = () -> "20.8";
         System.out.println("氣溫:" + play(sup));
-        
+        // 5. BiFunction
+        BiFunction<Integer, Integer, Double> bf = (h, w) -> w / Math.pow(h/100.0, 2);
+        System.out.println(play(170, 60, bf));
     }
     
     public static void play(int x, Consumer consumer) {
