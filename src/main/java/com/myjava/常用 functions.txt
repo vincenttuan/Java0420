@@ -1,0 +1,45 @@
+常用 function
+@FunctionalInterface
+public interface Consumer {
+    void accept(T t);
+}
+
+@FunctionalInterface
+public interface BiConsumer<T, U> {
+    void accept(T t, U u) }
+}
+
+@FunctionalInterface
+public interface Function<T, R> {
+    R apply(T t);
+}
+
+@FunctionalInterface
+public interface BiFunction<T, U, R> {
+    R apply(T t, U u) }
+}
+
+@FunctionalInterface
+public interface BinaryOperator extends BiFunction<T, T, T> { 
+    T apply(T t1, T t2) 
+}
+
+@FunctionalInterface
+public interface UnaryOperator extends Function<T, T> { 
+    T apply(T t);
+}
+
+@FunctionalInterface
+public interface Predicate {
+    boolean test(T t);
+}
+
+@FunctionalInterface
+public interface BiPredicate<T, U> {
+    boolean test(T t, U u) }
+}
+
+@FunctionalInterface
+public interface Supplier {
+    T get();
+}

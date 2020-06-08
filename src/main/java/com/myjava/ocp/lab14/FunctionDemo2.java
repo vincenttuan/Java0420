@@ -1,6 +1,7 @@
 package com.myjava.ocp.lab14;
 
 import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -26,6 +27,9 @@ public class FunctionDemo2 {
         // 5. BiFunction
         BiFunction<Integer, Integer, Double> bf = (h, w) -> w / Math.pow(h/100.0, 2);
         System.out.printf("bmi: %.2f\n", bf.apply(170, 60));
+        // 6. BinaryOperator (BinaryOperator extends BiFunction<T, T, T>)
+        BinaryOperator<Double> bo = (h, w) -> w / Math.pow(h/100, 2);
+        System.out.printf("bmi: %.2f\n", bo.apply(170.5, 60.3));
     }
     
     
