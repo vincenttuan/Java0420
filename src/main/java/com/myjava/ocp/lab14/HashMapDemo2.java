@@ -11,7 +11,10 @@ public class HashMapDemo2 {
         exam.put("數學", 80);
         exam.put("英文", 100);
         System.out.println(exam);
-        exam.computeIfPresent("數學", (k, v) -> v + 10);
+        exam.computeIfPresent("數學", (k, v) -> {
+            System.out.println(k + ", " + v);
+            return v + 10;
+        });
         System.out.println(exam);
     }
 }
