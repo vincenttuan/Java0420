@@ -3,6 +3,7 @@ package com.myjava.ocp.lab14;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class FunctionDemo {
     public static void main(String[] args) {
@@ -16,6 +17,10 @@ public class FunctionDemo {
         Predicate<Integer> pre = (t) -> t >= 60?true:false;
         System.out.println(play(80, pre));
         System.out.println(play(40, pre));
+        // 4. Supplier
+        Supplier<String> sup = () -> "20.8";
+        System.out.println("氣溫:" + play(sup));
+        
     }
     
     public static void play(int x, Consumer consumer) {
@@ -28,5 +33,9 @@ public class FunctionDemo {
     
     public static Boolean play(int x, Predicate predicate) {
         return predicate.test(x);
+    }
+    
+    public static String play(Supplier<String> supplier) {
+        return supplier.get();
     }
 }
