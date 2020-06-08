@@ -1,5 +1,6 @@
 package com.myjava.ocp.lab14;
 
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -37,5 +38,9 @@ public class FunctionDemo {
     
     public static String play(Supplier<String> supplier) {
         return supplier.get();
+    }
+    
+    public static Double play(Integer h, Integer w, BiFunction<Integer, Integer, Double> biFunction) {
+        return biFunction.apply(h, w);
     }
 }
