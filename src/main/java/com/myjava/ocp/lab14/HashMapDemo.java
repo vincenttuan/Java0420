@@ -1,6 +1,7 @@
 package com.myjava.ocp.lab14;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class HashMapDemo {
@@ -18,5 +19,14 @@ public class HashMapDemo {
         for(String key : keys) {
             System.out.printf("key: %s value: %d\n", key, exam.get(key));
         }
+        // Java 8 (e) 就是 Entry 物件 (裡面存放 Map 的元素資料(key=value))
+        exam.entrySet().stream().forEach((e)->System.out.println(e));
+        exam.entrySet().stream().forEach(System.out::println);
+        
+        exam.entrySet().stream().forEach((e)->System.out.println(e.getKey()));
+        exam.entrySet().stream().forEach(Entry::getKey);
+        
+        exam.entrySet().stream().forEach((e)->System.out.println(e.getValue()));
+        exam.entrySet().stream().forEach(Entry::getValue);
     }
 }
