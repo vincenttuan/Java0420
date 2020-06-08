@@ -16,5 +16,8 @@ public class HashMapDemo2 {
             return v + 10;
         });
         System.out.println(exam);
+        exam.computeIfAbsent("自然", (k)->70);
+        System.out.println(exam);
+        exam.forEach((k, v) -> System.out.printf("k=%s, v=%d\n", k, v));
     }
 }
