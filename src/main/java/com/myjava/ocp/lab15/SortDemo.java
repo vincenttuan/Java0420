@@ -26,5 +26,9 @@ public class SortDemo {
         Arrays.sort(nums, (o1, o2) -> o1 - o2);
         Stream.of(nums).forEach(num -> System.out.print(num + " "));
         System.out.println();
+        
+        Arrays.sort(nums, (o1, o2) -> o2 - o1);
+        Stream.of(nums).forEach(num -> System.out.print(num + " "));
+        System.out.println();
     }
 }
