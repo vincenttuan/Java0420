@@ -3,8 +3,13 @@ package com.myjava.ocp.lab16.exchange;
 import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
 
 public class ExchangeService {
     public Exchange[] query() {
@@ -21,7 +26,22 @@ public class ExchangeService {
     
     public Double totalBalance() {
         Exchange[] exchanges = query();
-        return Stream.of(exchanges).mapToDouble(e -> e.getBalance()).sum();
+        return Stream.of(exchanges)
+                .mapToDouble(e -> exchangeToNTD(e))
+                .sum();
+    }
+    
+    public Double exchangeToNTD(Exchange e) {
+        Stock stock = null;
+        try {
+            stock = YahooFinance.get(e.getType() + "TWD=x");
+        } catch (IOException ex) {
+            System.out.println("無此商品或網路錯誤");
+            return 0.0;
+        }
+        double price = stock.getQuote().getPrice().doubleValue();
+        System.out.printf("1元 %s 對台幣 = %.2f\n", e.getType(), price);
+        return e.getBalance() * price;
     }
     
 }
