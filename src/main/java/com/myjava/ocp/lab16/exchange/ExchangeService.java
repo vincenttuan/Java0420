@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class ExchangeService {
     public Exchange[] query() {
@@ -17,4 +18,10 @@ public class ExchangeService {
         }
         return new Gson().fromJson(json, Exchange[].class);
     }
+    
+    public Double totalBalance() {
+        Exchange[] exchanges = query();
+        return Stream.of(exchanges).mapToDouble(e -> e.getBalance()).sum();
+    }
+    
 }
