@@ -1,14 +1,14 @@
 [
     {
         "username": "admin",
-        "password": 1234
+        "password": "MTIzNA=="
     },
     {
         "username": "john",
-        "password": 5678
+        "password": "NTY3OA=="
     },
     {
         "username": "mary",
-        "password": 1111
+        "password": "MTExMQ=="
     }
 ]
