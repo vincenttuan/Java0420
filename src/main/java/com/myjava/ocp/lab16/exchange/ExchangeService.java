@@ -34,14 +34,15 @@ public class ExchangeService {
     public Double exchangeToNTD(Exchange e) {
         Stock stock = null;
         try {
-            stock = YahooFinance.get(e.getType() + "TWD=x");
-        } catch (IOException ex) {
+            stock = YahooFinance.get(e.getType() + "TWD=xxx");
+            double price = stock.getQuote().getPrice().doubleValue();
+            System.out.printf("1元 %s 對台幣 = %.2f\n", e.getType(), price);
+            return e.getBalance() * price;
+        } catch (Exception ex) {
             System.out.println("無此商品或網路錯誤");
             return 0.0;
         }
-        double price = stock.getQuote().getPrice().doubleValue();
-        System.out.printf("1元 %s 對台幣 = %.2f\n", e.getType(), price);
-        return e.getBalance() * price;
+        
     }
     
 }
