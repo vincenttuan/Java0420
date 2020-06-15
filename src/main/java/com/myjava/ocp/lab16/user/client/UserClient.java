@@ -13,7 +13,7 @@ public class UserClient {
             System.out.println("請輸入 username:");
             String username = sc.next();
             System.out.println("請輸入 password:");
-            Integer password = sc.nextInt();
+            String password = sc.next();
             UserService userService = new UserService();
             boolean check = userService.login(username, password);
             System.out.println("登入成功, " + check);

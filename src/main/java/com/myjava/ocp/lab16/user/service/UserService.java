@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class UserService {
     private UserDAO dao = new UserDAO();
-    public boolean login(String username, Integer password) throws UserLoginFailException {
+    public boolean login(String username, String password) throws UserLoginFailException {
         User[] users = dao.query();
         if(users == null) {
             return false;
