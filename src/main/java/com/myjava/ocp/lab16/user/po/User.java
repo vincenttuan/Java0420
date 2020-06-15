@@ -2,7 +2,7 @@ package com.myjava.ocp.lab16.user.po;
 
 public class User {
     private String username;
-    private Integer password;
+    private String password;
 
     public String getUsername() {
         return username;
@@ -12,19 +12,13 @@ public class User {
         this.username = username;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "username=" + username + ", password=" + password + '}';
-    }
-    
-    
     
 }
