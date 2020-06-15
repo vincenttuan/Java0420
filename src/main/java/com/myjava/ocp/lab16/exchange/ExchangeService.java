@@ -34,7 +34,7 @@ public class ExchangeService {
     public Double exchangeToNTD(Exchange e) {
         Stock stock = null;
         try {
-            stock = YahooFinance.get(e.getType() + "TWD=xxx");
+            stock = YahooFinance.get(e.getType() + "TWD=x");
             double price = stock.getQuote().getPrice().doubleValue();
             System.out.printf("1元 %s 對台幣 = %.2f\n", e.getType(), price);
             return e.getBalance() * price;
