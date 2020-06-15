@@ -5,8 +5,6 @@ import com.myjava.ocp.lab16.user.po.User;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class UserDAO {
     public User[] query() {
