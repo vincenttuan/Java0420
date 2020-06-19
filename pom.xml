@@ -32,13 +32,13 @@
             <scope>test</scope>
         </dependency>
         
-        <!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+        <!-- https://mvnrepository.com/artifact/org.apache.derby/derbyclient -->
         <dependency>
             <groupId>org.apache.derby</groupId>
-            <artifactId>derby</artifactId>
+            <artifactId>derbyclient</artifactId>
             <version>10.14.2.0</version>
-            <scope>test</scope>
         </dependency>
+
 
         
     </dependencies>
