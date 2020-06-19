@@ -21,7 +21,8 @@ public class MyDerby {
                double cost = rs.getDouble("PURCHASE_COST");
                int quantity = rs.getInt("QUANTITY_ON_HAND");
                String desp = rs.getString("DESCRIPTION");
-                System.out.printf("%-10d %-10.1f %-10d %-30s\n", id, cost, quantity, desp);
+               double subtotal = cost * quantity;
+               System.out.printf("%-10d %,10.1f %,10d %,15.1f %-30s\n", id, cost, quantity, subtotal, desp);
             }
             
         } catch (Exception e) {
