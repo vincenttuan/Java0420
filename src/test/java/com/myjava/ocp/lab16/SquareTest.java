@@ -30,4 +30,17 @@ public class SquareTest {
         
     }
     
+    @Test
+    public void testGetAngle() {
+        System.out.println("getAngle");
+        int x = 10;
+        int h = 4;
+        Square instance = new Square();
+        int expResult = 20;
+        int result = instance.getAngle(x, h);
+        assertEquals(expResult, result);
+        
+    }
+    
+    
 }
