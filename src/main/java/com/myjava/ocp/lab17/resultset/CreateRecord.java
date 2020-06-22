@@ -17,6 +17,11 @@ public class CreateRecord {
             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = stmt.executeQuery("SELECT * FROM Student");) {
             
+            rs.moveToInsertRow();
+            rs.updateInt("age", 10);
+            rs.updateString("name", "pcschool");
+            rs.insertRow();
+            System.out.println("新增完成");
             
         } catch (Exception e) {
             e.printStackTrace();
