@@ -16,11 +16,14 @@ public class CreateBatchRecord {
         String password = "app";
         try(Connection conn = DriverManager.getConnection(url, username, password);
             PreparedStatement pstmt = conn.prepareStatement(sql);) {
-            
-            pstmt.setInt(1, new Random().nextInt(40) + 10);
-            pstmt.setString(2, new Faker().name().firstName());
-            int count = pstmt.executeUpdate();
-            System.out.println("建立資料列 : " + count);
+            pstmt.clearBatch(); // 清空緩存
+            for(int i=1;i<=100;i++) {
+                pstmt.setInt(1, new Random().nextInt(40) + 10);
+                pstmt.setString(2, new Faker().name().firstName());
+                pstmt.addBatch(); // 加入緩存
+            }
+            int[] count = pstmt.executeBatch(); // 批次執行緩存裡的任務
+            System.out.println("建立資料列 : " + count.length);
             
         } catch (Exception e) {
             e.printStackTrace();
