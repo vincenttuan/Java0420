@@ -9,6 +9,12 @@ import java.sql.Statement;
 public class CreateTable {
 
     public static void main(String[] args) {
+        // JDBC 3.0
+        //Class.forName("org.apache.derby.jdbc.ClientDriver");
+
+        // JDBC 4.0
+        // 不使用 Class.forName
+        
         String sql = "CREATE TABLE Student (\n"
                 + "    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),\n"
                 + "    age INTEGER NOT NULL,\n"
