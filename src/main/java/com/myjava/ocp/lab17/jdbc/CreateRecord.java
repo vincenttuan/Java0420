@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class CreateRecord {
     public static void main(String[] args) {
-        String sql = "INSERT INTO Student(age, name) VALUES(18, 'Helen')";
+        String sql = "INSERT INTO Student(age, name) VALUES(20, 'John')";
         String url = "jdbc:derby://localhost:1527/sample";
         String username = "app";
         String password = "app";
