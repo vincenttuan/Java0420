@@ -15,9 +15,9 @@ public class CreateTable {
                 + "    name VARCHAR(20) NOT NULL\n"
                 + ");";
         
-        String url = "";
-        String username = "";
-        String password = "";
+        String url = "jdbc:derby://localhost:1527/sample";
+        String username = "app";
+        String password = "app";
         try(Connection conn = DriverManager.getConnection(url, username, password);
             Statement stmt = conn.createStatement();) {
             int count = stmt.executeUpdate(sql);
