@@ -2,9 +2,14 @@ package com.myjava.ocp.lab18;
 
 public class Race extends Thread {
 
+    public Race(String string) {
+        super(string);
+    }
+    
     @Override
     public void run() {
         job();
+        
     }
     
     public void job() {
