@@ -21,6 +21,14 @@ public class FightingJFrame extends javax.swing.JFrame {
         new ImageIcon(path + "ready_4.png"),
         new ImageIcon(path + "ready_5.png"),
     };
+    private static ImageIcon[] icons2 = {
+        new ImageIcon(path + "fight_0.png"),
+        new ImageIcon(path + "fight_1.png"),
+        new ImageIcon(path + "fight_2.png"),
+        new ImageIcon(path + "fight_3.png"),
+        new ImageIcon(path + "fight_4.png"),
+        new ImageIcon(path + "fight_5.png"),
+    };
     private Ready ready = new Ready();
     public FightingJFrame() {
         initComponents();
@@ -28,10 +36,14 @@ public class FightingJFrame extends javax.swing.JFrame {
     }
     
     class Ready extends Thread {
+        boolean isReady = true;
         @Override
         public void run() {
-            for (int i=0;true;i++) {                
-                actor.setIcon(icons[i % icons.length]);
+            for (int i=0;true;i++) {
+                if(isReady)
+                    actor.setIcon(icons[i % icons.length]);
+                else
+                    actor.setIcon(icons2[i % icons2.length]);
                 try {
                     Thread.sleep(100);
                 } catch (Exception e) {
