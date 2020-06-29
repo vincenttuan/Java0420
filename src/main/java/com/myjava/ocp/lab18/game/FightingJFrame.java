@@ -12,13 +12,19 @@ import javax.swing.ImageIcon;
  * @author teacher
  */
 public class FightingJFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FightingJFrame
-     */
+    private static String path = "src\\main\\java\\com\\myjava\\ocp\\lab18\\game\\fighting_images\\";
+    private static ImageIcon[] icons = {
+        new ImageIcon(path + "ready_0.png"),
+        new ImageIcon(path + "ready_1.png"),
+        new ImageIcon(path + "ready_2.png"),
+        new ImageIcon(path + "ready_3.png"),
+        new ImageIcon(path + "ready_4.png"),
+        new ImageIcon(path + "ready_5.png"),
+    };
+    
     public FightingJFrame() {
         initComponents();
-        actor.setIcon(new ImageIcon("src\\main\\java\\com\\myjava\\ocp\\lab18\\game\\fighting_images\\ready_0.png"));
+        actor.setIcon(icons[0]);
     }
 
     /**
