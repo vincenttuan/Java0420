@@ -18,10 +18,30 @@ public class WalkJFrame extends javax.swing.JFrame {
         new ImageIcon(path + "walk_5.png"),
     };
     
+    Ready ready = new Ready();
     public WalkJFrame() {
         initComponents();
+        ready.start();
     }
-
+    
+    class Ready extends Thread {
+        boolean isReady = true;
+        @Override
+        public void run() {
+            for (int i=0;true;i++) {
+                if(isReady)
+                    actor.setIcon(icons[i % icons.length]);
+                else
+                    actor.setIcon(icons2[i % icons2.length]);
+                try {
+                    Thread.sleep(100);
+                } catch (Exception e) {
+                }
+                if(i == Integer.MAX_VALUE) i = 0;
+            }
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
