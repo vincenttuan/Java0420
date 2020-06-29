@@ -55,6 +55,12 @@ public class WalkJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        actor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actorMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,6 +80,10 @@ public class WalkJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actorMouseClicked
+        ready.isReady = !ready.isReady;
+    }//GEN-LAST:event_actorMouseClicked
 
     /**
      * @param args the command line arguments
