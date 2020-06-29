@@ -21,11 +21,26 @@ public class FightingJFrame extends javax.swing.JFrame {
         new ImageIcon(path + "ready_4.png"),
         new ImageIcon(path + "ready_5.png"),
     };
-    
+    private Ready ready = new Ready();
     public FightingJFrame() {
         initComponents();
-        actor.setIcon(icons[0]);
+        ready.start();
     }
+    
+    class Ready extends Thread {
+        @Override
+        public void run() {
+            for (int i=0;true;i++) {                
+                actor.setIcon(icons[i % icons.length]);
+                try {
+                    Thread.sleep(100);
+                } catch (Exception e) {
+                }
+                if(i == Integer.MAX_VALUE) i = 0;
+            }
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
