@@ -1,6 +1,12 @@
 package com.myjava.ocp.lab18;
 
-public class Race {
+public class Race extends Thread {
+
+    @Override
+    public void run() {
+        job();
+    }
+    
     public void job() {
         String tName = Thread.currentThread().getName();
         for(int i=1;i<=1000;i++) {
