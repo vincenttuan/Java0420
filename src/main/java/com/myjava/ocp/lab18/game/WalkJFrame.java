@@ -18,21 +18,33 @@ public class WalkJFrame extends javax.swing.JFrame {
         new ImageIcon(path + "walk_5.png"),
     };
     
-    Ready ready = new Ready();
+    Ready ready;
     public WalkJFrame() {
         initComponents();
+        ready = new Ready();
         ready.start();
     }
     
     class Ready extends Thread {
         boolean isReady = true;
+        int x, y;
+        public Ready() {
+            actor.setIcon(icons[0]);
+            x = actor.getX();
+            y = actor.getY();
+        }
+        
         @Override
         public void run() {
             for (int i=0;true;i++) {
                 if(isReady)
                     actor.setIcon(icons[i % icons.length]);
-                else
+                else {
                     actor.setIcon(icons2[i % icons2.length]);
+                    x = actor.getX() + 5;
+                    y = actor.getY();
+                }
+                actor.setLocation(x, y);
                 try {
                     Thread.sleep(100);
                 } catch (Exception e) {
