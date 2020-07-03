@@ -27,5 +27,8 @@ class Worker extends Thread {
 }
 
 public class JoinDemo {
-    
+    public static void main(String[] args) {
+        Father father = new Father();
+        father.start();
+    }
 }
