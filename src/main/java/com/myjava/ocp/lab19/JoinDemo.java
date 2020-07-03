@@ -9,7 +9,7 @@ class Father extends Thread {
         Worker worker = new Worker();
         worker.start();
         try {
-            worker.join();
+            worker.join(10000);
         } catch (Exception e) {
         }
         System.out.println("爸爸開始洗澡");
