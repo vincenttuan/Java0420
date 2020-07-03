@@ -21,7 +21,6 @@ class Student implements Runnable {
             } catch (Exception e) {
             }
         }
-        
     }
 }
 
