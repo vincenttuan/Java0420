@@ -15,9 +15,9 @@ class Worker extends Thread {
     public void run() {
         System.out.println("工人送瓦斯");
         for(int i=1;i<=5;i++) {
-            System.out.printf("%d 秒鐘 ", i);
             try {
                 Thread.sleep(i);
+                System.out.printf("%d 秒鐘 ", i);
             } catch (Exception e) {
                 System.out.println("工人發生意外");
             }
