@@ -22,7 +22,8 @@ public class OpenWeatherDemo {
                                        .get(0)
                                        .getAsJsonObject();
             System.out.println(jo2.get("description").getAsString());
-            System.out.println(jo2.get("icon").getAsString());
+            String icon_url = "http://openweathermap.org/img/wn/%s.png";
+            System.out.println(String.format(icon_url, jo2.get("icon").getAsString()));
         } catch (Exception e) {
         }
     };
