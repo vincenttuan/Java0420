@@ -2,6 +2,7 @@ package com.myjava.ocp.lab19;
 
 import java.util.Random;
 import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 
 class Lotto implements Callable<Integer> {
     @Override
@@ -12,7 +13,10 @@ class Lotto implements Callable<Integer> {
 }
 
 public class CallableDemo {
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) throws Exception{
+        Lotto lotto = new Lotto();
+        FutureTask<Integer> task = new FutureTask<>(lotto);
+        new Thread(task).start();
+        System.out.println(task.get());
     }
 }
