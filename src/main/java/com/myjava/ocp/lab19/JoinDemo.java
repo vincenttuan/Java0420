@@ -11,6 +11,7 @@ class Father extends Thread {
         try {
             worker.join(10000);
         } catch (Exception e) {
+            System.out.println(e);
         }
         System.out.println("爸爸開始洗澡");
         System.out.println("爸爸洗完澡了");
