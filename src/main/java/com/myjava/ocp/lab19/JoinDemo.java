@@ -8,6 +8,8 @@ class Father extends Thread {
         System.out.println("爸爸打電話請瓦斯工人送瓦斯");
         Worker worker = new Worker();
         worker.start();
+        System.out.println("爸爸開始洗澡");
+        System.out.println("爸爸洗完澡了");
     }
 }
 
