@@ -13,8 +13,15 @@ class Student implements Runnable {
     }
     @Override
     public void run() {
-        int value = new Random().nextInt(101);
-        box.setValue(value);
+        while (true) {            
+            int value = new Random().nextInt(101);
+            box.setValue(value);
+            try {
+                Thread.sleep(500);
+            } catch (Exception e) {
+            }
+        }
+        
     }
 }
 
