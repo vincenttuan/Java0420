@@ -12,9 +12,9 @@ public class OpenWeatherDemo {
             String json = new Scanner(new URL(path).openStream()).useDelimiter("\\A").next();
             JsonObject jo = JsonParser.parseString(json) // 剖析 json 字串
                                       .getAsJsonObject() // 取得 json 根物件
-                                      .get("main")       // 取得 main 這個 json 元素
-                                      .getAsJsonObject();// 得到該元素的 json 物件
-            System.out.println(jo);
+                                      .getAsJsonObject("main");// 取得名稱為 main 的 json 物件
+            System.out.println(jo.get("temp").getAsDouble() - 273.15);
+            System.out.println(jo.get("feels_like").getAsDouble() - 273.15);
             
         } catch (Exception e) {
         }
