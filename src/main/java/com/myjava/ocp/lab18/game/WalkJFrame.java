@@ -41,8 +41,7 @@ public class WalkJFrame extends javax.swing.JFrame {
                     actor.setIcon(icons[i % icons.length]);
                 else {
                     actor.setIcon(icons2[i % icons2.length]);
-                    x = actor.getX() + 5;
-                    y = actor.getY();
+                    x += 5;
                 }
                 actor.setLocation(x, y);
                 try {
