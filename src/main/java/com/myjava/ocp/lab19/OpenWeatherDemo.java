@@ -16,6 +16,13 @@ public class OpenWeatherDemo {
             System.out.println(jo.get("temp").getAsDouble() - 273.15);
             System.out.println(jo.get("feels_like").getAsDouble() - 273.15);
             
+            JsonObject jo2 = JsonParser.parseString(json)
+                                       .getAsJsonObject()
+                                       .getAsJsonArray("weather")
+                                       .get(0)
+                                       .getAsJsonObject();
+            System.out.println(jo2.get("description").getAsString());
+            System.out.println(jo2.get("icon").getAsString());
         } catch (Exception e) {
         }
     };
