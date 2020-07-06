@@ -1,8 +1,9 @@
 package com.myjava.ocp.lab20;
 
 class Ball implements Runnable {
-    private int amount = 10;
-    private void getAndPrint() {
+    private int amount = 100;
+    private synchronized void getAndPrint() {
+        if (amount <= 0) return;
         String tName = Thread.currentThread().getName();
         System.out.printf("%s 取到第 %d 顆球\n", tName, amount);
         amount--;
