@@ -21,7 +21,8 @@ public class SyncDemo {
     public static void main(String[] args) {
         Ball ball = new Ball();
         Thread t1 = new Thread(ball, "甲");
+        Thread t2 = new Thread(ball, "乙");
         t1.start();
-        //Thread t2 = new Thread(ball, "乙");
+        t2.start();
     }
 }
