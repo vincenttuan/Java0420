@@ -2,10 +2,10 @@ package com.myjava.ocp.lab20;
 
 class Cookies {
     public synchronized void put(int n) {
-        System.out.printf("主人放第 %d 塊餅乾");
+        System.out.printf("主人放第 %d 塊餅乾\n", n);
     }
     public synchronized void eat(int n) {
-        System.out.printf("小狗吃第 %d 塊餅乾");
+        System.out.printf("小狗吃第 %d 塊餅乾\n", n);
     }
 }
 
