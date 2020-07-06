@@ -22,6 +22,7 @@ public class DogAndMaster {
                 cookies.eat(i); // 吃餅乾的工作
             }
         };
-        
+        new Thread(r1, "主人").start();
+        new Thread(r2, "小狗").start();
     }
 }
