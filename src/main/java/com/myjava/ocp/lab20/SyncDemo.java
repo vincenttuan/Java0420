@@ -4,8 +4,7 @@ class Ball implements Runnable {
     private int amount = 10;
     private void getAndPrint() {
         String tName = Thread.currentThread().getName();
-        int num = amount;
-        System.out.printf("%s 取到第 %d 顆球\n", tName, num);
+        System.out.printf("%s 取到第 %d 顆球\n", tName, amount);
         amount--;
     }
     @Override
