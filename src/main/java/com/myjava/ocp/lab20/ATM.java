@@ -42,6 +42,10 @@ public class ATM { // 主程式
         Withdraw w2 = new Withdraw(2000, account);
         Withdraw w3 = new Withdraw(4000, account);
         Thread t1 = new Thread(w1, "小明");
+        Thread t2 = new Thread(w2, "小華");
+        Thread t3 = new Thread(w3, "小英");
         t1.start();
+        t2.start();
+        t3.start();
     }
 }
