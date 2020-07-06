@@ -9,6 +9,8 @@ class Account { // 資源物件(帳戶)
         String tName = Thread.currentThread().getName();
         // 取得帳戶餘額
         int tmpMoney = money;
+        // 模擬運作時間
+        for(int i=0;i<Integer.MAX_VALUE;i++);
         // 判斷帳戶餘額是否足夠 ?
         if(tmpMoney - m >= 0) {
             money = tmpMoney - m;
