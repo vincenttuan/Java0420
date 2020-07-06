@@ -19,7 +19,7 @@ class Account { // 資源物件(帳戶)
     }
 }
 
-class Withdraw implements Runnable { // 提款行為
+class Withdraw implements Runnable { // 提款行為(執行緒)
     private int money;
     private Account account;
 
@@ -35,6 +35,13 @@ class Withdraw implements Runnable { // 提款行為
     
 }
 
-public class ATM {
-    
+public class ATM { // 主程式
+    public static void main(String[] args) {
+        Account account = new Account(10000);
+        Withdraw w1 = new Withdraw(5000, account);
+        Withdraw w2 = new Withdraw(2000, account);
+        Withdraw w3 = new Withdraw(4000, account);
+        Thread t1 = new Thread(w3, "小明");
+        t1.start();
+    }
 }
