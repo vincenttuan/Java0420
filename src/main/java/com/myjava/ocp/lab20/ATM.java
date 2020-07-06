@@ -5,7 +5,7 @@ class Account { // 資源物件(帳戶)
     public Account(int money) {
         this.money = money;
     }
-    public void withdraw(int m) { // 提款
+    public synchronized void withdraw(int m) { // 提款
         String tName = Thread.currentThread().getName();
         // 取得帳戶餘額
         int tmpMoney = money;
