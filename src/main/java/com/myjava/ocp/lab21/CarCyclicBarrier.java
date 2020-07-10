@@ -13,14 +13,14 @@ class Car extends Thread {
     @Override
     public void run() {
         String tname = Thread.currentThread().getName();
-        System.out.printf("%s 從台北出發\n");
+        System.out.printf("%s 從台北出發\n", tname);
         try {
             Thread.sleep(new Random().nextInt(5000));
-            System.out.printf("%s 到台中了\n");
+            System.out.printf("%s 到台中了\n", tname);
             cb.await(); // 等待其他人
         } catch (Exception e) {
         }
-        System.out.printf("%s 繼續往高雄前進\n");
+        System.out.printf("%s 繼續往高雄前進\n", tname);
     }
     
 }
