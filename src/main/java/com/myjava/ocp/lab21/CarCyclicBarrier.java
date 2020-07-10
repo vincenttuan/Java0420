@@ -27,7 +27,11 @@ class Car extends Thread {
 
 public class CarCyclicBarrier {
     public static void main(String[] args) {
-        CyclicBarrier cb = new CyclicBarrier(4);
+        //CyclicBarrier cb = new CyclicBarrier(3);
+        CyclicBarrier cb = new CyclicBarrier(4, ()->{
+            String tname = Thread.currentThread().getName();
+            System.out.printf("%s 執行 -> 完成了\n", tname);
+        });
         for(int i=1;i<=4;i++) {
             new Car(cb).start();
         }
