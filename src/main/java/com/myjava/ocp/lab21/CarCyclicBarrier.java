@@ -17,7 +17,7 @@ class Car extends Thread {
         try {
             Thread.sleep(new Random().nextInt(5000));
             System.out.printf("%s 到台中了\n");
-            cb.await();
+            cb.await(); // 等待其他人
         } catch (Exception e) {
         }
         System.out.printf("%s 繼續往高雄前進\n");
@@ -26,5 +26,10 @@ class Car extends Thread {
 }
 
 public class CarCyclicBarrier {
-    
+    public static void main(String[] args) {
+        CyclicBarrier cb = new CyclicBarrier(4);
+        for(int i=1;i<=4;i++) {
+            new Car(cb).start();
+        }
+    }
 }
