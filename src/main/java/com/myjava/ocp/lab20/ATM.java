@@ -1,6 +1,7 @@
 package com.myjava.ocp.lab20;
 
 class Account { // 資源物件(帳戶)
+   
     private int money;
     public Account(int money) {
         this.money = money;
