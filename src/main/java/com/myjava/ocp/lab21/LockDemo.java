@@ -27,9 +27,12 @@ public class LockDemo {
     public static void main(String[] args) {
         Thread t1 = new Thread(new Num());
         Thread t2 = new Thread(new Num());
+        Thread t3 = new Thread(new Num());
         t1.setName("Vincent");
         t2.setName("Anita");
+        t3.setName("Mary");
         t1.start();
         t2.start();
+        t3.start();
     }
 }
