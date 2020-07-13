@@ -22,5 +22,6 @@ public class InvokeAllDemo {
         for(Future<Integer> future : result) {
             System.out.println(future.get());
         }
+        service.shutdown();
     }
 }
