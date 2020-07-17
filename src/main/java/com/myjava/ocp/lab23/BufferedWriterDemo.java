@@ -8,7 +8,7 @@ public class BufferedWriterDemo {
         String[] rows = {"apple", "banana"};
         String path = "src\\main\\java\\com\\myjava\\ocp\\lab23\\news.txt";
         try(FileWriter fw = new FileWriter(path, true);
-            BufferedWriter bw = new BufferedWriter(fw)) {
+            BufferedWriter bw = new BufferedWriter(fw, 16 * 1024)) {
             
             for(String row : rows) {
                 bw.write("\n" + row);
