@@ -10,6 +10,7 @@ public class ReadSalary {
 
     public static void main(String[] args) {
         String zipName = JOptionPane.showInputDialog("請輸入檔名:");
+        if (zipName == null) return;
         String path = String.format("src\\main\\java\\com\\myjava\\ocp\\lab23\\zip\\%s.zip", zipName);
         try (FileInputStream fr = new FileInputStream(path);
              ZipInputStream zip = new ZipInputStream(fr);
