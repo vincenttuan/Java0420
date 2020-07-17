@@ -11,12 +11,13 @@ public class GetWebImage2 {
         URL url = new URL(from);
         URLConnection hc = url.openConnection();
         hc.setRequestProperty("User-Agent", "我不是機器人");
+        StringBuilder source = new StringBuilder();
         try(InputStream is = hc.getInputStream()) {
             int x;
             while ((x = is.read()) != -1) {                
-                System.out.print((char)x);
+                source.append((char)x);
             }
-            
+            System.out.println(source);
         } catch (Exception e) {
             e.printStackTrace();
         }
