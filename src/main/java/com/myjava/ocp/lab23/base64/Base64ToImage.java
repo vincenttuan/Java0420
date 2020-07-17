@@ -5,7 +5,6 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import javax.imageio.ImageIO;
 import sun.misc.BASE64Decoder;
-import sun.net.www.content.image.png;
 
 public class Base64ToImage {
 
@@ -22,7 +21,7 @@ public class Base64ToImage {
         bis.close();
 
         // write the image to a file
-        String to = "src\\main\\java\\com\\myjava\\ocp\\lab23\\base64\\baby.jpg";
+        String to = "src/main/java/com/myjava/ocp/lab23/base64/baby.jpg";
         File outputfile = new File(to);
         ImageIO.write(image, "jpg", outputfile);
     }
