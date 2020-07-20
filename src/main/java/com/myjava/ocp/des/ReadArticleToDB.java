@@ -25,7 +25,7 @@ public class ReadArticleToDB {
                 int id = rs.getInt("id");
                 byte[] bytes = rs.getBytes("content");
                 String article = new String(des.Decryptor(bytes)); // 解碼
-                System.out.println(id + "\t資料源:" + bytes + "\t解碼後:" + article);
+                System.out.println(id + "\t資料源:" + new String(bytes) + "\t解碼後:" + article);
             }
 
         } catch (Exception e) {
