@@ -1,6 +1,9 @@
 package com.myjava.ocp.des.utils;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
+import java.util.Date;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
@@ -29,9 +32,18 @@ public class GenKey {
     
     public static void main(String[] args) {
         GenKey genKey = new GenKey();
-        System.out.println(genKey.getNewSecretKey());
-        for(byte b : genKey.getNewSecretKey().getEncoded()) {
+        SecretKey secretKey = genKey.getNewSecretKey();
+        for(byte b : secretKey.getEncoded()) {
             System.out.print(b);
+        }
+        String path = "src\\main\\java\\com\\myjava\\ocp\\des\\utils\\mydeskey_%d.bin";
+        try(FileOutputStream fos = new FileOutputStream(String.format(path, new Date().getTime()));
+            ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            
+            oos.writeObject(secretKey);
+            System.out.println("金鑰寫檔完成");
+            
+        } catch (Exception e) {
         }
     }
 }
