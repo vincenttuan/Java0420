@@ -14,6 +14,7 @@ public class ReadEmployee {
             System.out.println(emp);
             
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
