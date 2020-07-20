@@ -6,8 +6,8 @@ import java.io.ObjectOutputStream;
 public class WriteEmployee {
     public static void main(String[] args) {
         Employee emp = new Employee("Anita", 70000);
-        emp.setAge(20);
-        String path = "src\\main\\java\\com\\myjava\\ocp\\lab24\\emp2.bin";
+        
+        String path = "src\\main\\java\\com\\myjava\\ocp\\lab24\\emp2_2.bin";
         // 序列化寫入
         try(FileOutputStream fos = new FileOutputStream(path);
             ObjectOutputStream oos = new ObjectOutputStream(fos);) {
