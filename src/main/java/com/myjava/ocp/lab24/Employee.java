@@ -3,9 +3,9 @@ package com.myjava.ocp.lab24;
 import java.io.Serializable;
 
 public class Employee implements Serializable {
-    public static final long serialVersionUID = 2L;
+    public static final long serialVersionUID = 3L;
     private String name;
-    private int salary;
+    private transient int salary;
     
     public Employee(String name, int salary) {
         this.name = name;
