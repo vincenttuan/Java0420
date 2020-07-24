@@ -10,5 +10,9 @@ public class ReadAllNio {
         Path path = Paths.get("src\\main\\java\\com\\myjava\\ocp\\lab25\\data.txt");
         List<String> list = Files.readAllLines(path);
         System.out.println(list);
+        Files.readAllLines(path)
+                .stream()
+                .parallel()
+                .forEach(System.out::println);
     }
 }
